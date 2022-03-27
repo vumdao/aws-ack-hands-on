@@ -36,7 +36,7 @@
 - When to use ACK? Read [here](https://dev.to/mda590/trying-out-aws-controllers-for-kubernetes-ack-1897)
 
 ## 🚀 **Install the ACK service controller for RDS** <a name="Install-the-ACK-service-controller-for-RDS"></a>
-- Pre-requiset:
+- Pre-requisite:
   - EKS cluster
   - OIDC for IRSA
   - IAM for service account (IRSA) - Checkout [Using IAM Service Account Instead Of Instance Profile For EKS Pods](https://dev.to/vumdao/using-iam-service-account-instead-of-instance-profile-for-eks-pods-262p) for how-to.
