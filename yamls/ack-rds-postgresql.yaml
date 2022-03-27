@@ -1,0 +1,29 @@
+apiVersion: rds.services.k8s.aws/v1alpha1
+kind: DBInstance
+metadata:
+  name: "rds-postgresql-dev"
+spec:
+  allocatedStorage: 20
+  autoMinorVersionUpgrade: true
+  backupRetentionPeriod: 7
+  dbInstanceClass: db.t3.micro
+  dbInstanceIdentifier: "rds-postgresql-dev"
+  dbSubnetGroupName: rds-postgresql-subnet-group
+  engine: postgres
+  engineVersion: "10"
+  masterUsername: "rds_dev"
+  masterUserPassword:
+    namespace: default
+    name: rds-postgresql-user-creds
+    key: password
+  multiAZ: true
+  publiclyAccessible: false
+  storageEncrypted: true
+  storageType: gp2
+  vpcSecurityGroupIDs:
+    - sg-009c3a2658d1f7165
+  tags:
+    - key: stage
+      value: development
+    - key: owner
+      value: dev
